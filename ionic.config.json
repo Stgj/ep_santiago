@@ -1,0 +1,7 @@
+{
+  "name": "ep_santiago",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
