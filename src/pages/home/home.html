@@ -1,17 +1,37 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
+    <ion-buttons >
+      <button ion-button icon-only><ion-icon name="analytics"></ion-icon></button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-list>
+    <ion-list-header color="danger">Mi lista</ion-list-header>
+    <ion-item-group>
+      <ion-item *ngFor="let item of lista" text-left>
+        <ion-avatar item-left><img [src]="'assets/icon/ico_'+item.id+'.png'"></ion-avatar>
+        <h2 item-right>{{item.titulo}}</h2>
+        <p item-right>{{item.descripcion}}</p>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-divider>Divisor</ion-item-divider>
+    <ion-item-group>
+      <ion-item *ngFor="let item of lista" text-left detail-push>
+        <ion-thumbnail item-left><img [src]="'assets/thumbnails/thumb_'+item.id+'.png'"></ion-thumbnail>
+
+        <ion-label>{{item.titulo}}</ion-label>
+        <ion-toggle color="danger"></ion-toggle>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+  <button ion-button (click)="agregarPagina()"> Agregar Página</button>
+  <button ion-button (click)="agregarPagina2()"> Agregar Página2</button>
 </ion-content>

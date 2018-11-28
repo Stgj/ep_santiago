@@ -1,11 +1,66 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+  <ion-navbar color="dark">
+    <ion-buttons>
+      <button ion-button icon-only><ion-icon name="analytics"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>About</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
 
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+  <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>arc/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>
+
+  <ion-segment [(ngModel)]='seleccion'>
+    <ion-segment-button value="grupo1">Grupo1</ion-segment-button>
+    <ion-segment-button value="grupo2">Grupo2</ion-segment-button>
+    <ion-segment-button value="grupo3">Grupo3</ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="seleccion == 'grupo1'">
+    <button ion-button color="danger">Danger</button>
+    <button ion-button full>Full</button>
+    <button ion-button block>Block</button>
+    <button ion-button round>Round</button>
+    <button ion-button small>Small</button>
+    <button ion-button large>Large</button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button block>Botón 1</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block>Botón 2</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block>Botón 3</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="seleccion == 'grupo2'">
+    <button ion-button outline>Outline</button>
+    <button ion-button round outline>Round Outline</button>
+    <button ion-button clear>Clear</button>
+  </div>
+
+  <div *ngIf="seleccion == 'grupo3'">
+    <ion-icon name="analytica"></ion-icon>
+    <button ion-button color="dark" icon-left><ion-icon name="analytica"></ion-icon>Analytics</button>
+    <button ion-button color="dark" icon-right>add-circle<ion-icon name="add-circle"></ion-icon></button>
+    <button ion-button color="dark" icon-only><ion-icon name="add-circle"></ion-icon></button>
+    <button ion-button color="dark" icon-only clear><ion-icon name="add-circle"></ion-icon></button>
+    <button ion-button color="dark" icon-only outline><ion-icon name="add-circle"></ion-icon></button>
+  </div>
 </ion-content>
